@@ -45,6 +45,12 @@ adaptive-ai-infrastructure-builder/
 
 Lambda · S3 · API Gateway · DynamoDB · SQS · CloudWatch · IAM · Graviton
 
+## Example Project
+
+See [`example/`](example/) for a complete working project generated from this prompt — an NGO education platform for rural Tanzania ($30/mo budget, intermittent connectivity, 200 students, shared devices).
+
+Includes CDK stack, Lambda handlers, architecture diagram, and cost estimate.
+
 ## Author
 
 [Patience Richard](https://github.com/patiencerichard)
