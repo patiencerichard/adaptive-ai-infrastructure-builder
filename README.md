@@ -1,37 +1,54 @@
-# Adaptive AI Infrastructure Builder for Low-Resource Environments
+# Adaptive AWS Architecture Builder for Low-Resource Environments
 
-> AWS Prompt the Planet Challenge Submission
+A prompt for designing production-ready AWS architectures based on real-world constraints.
 
-An AI-powered AWS infrastructure assistant that dynamically designs and deploys cloud architectures based on real-world constraints such as low bandwidth, limited budgets, and shared device usage.
+## What this is
 
-## What Makes This Unique
+Most AWS deployment prompts assume enterprise budgets, stable internet, and dedicated devices. This prompt doesn't. It asks about your constraints first, then designs an architecture that fits.
 
-- **Context-aware** — asks before building
-- **Designed for low-resource environments** — not ideal conditions
-- **Adaptive architecture** — instead of static templates
-- **Budget-conscious** — optimized for constrained budgets
+## Prompt Structure
 
-## Target Audience
+```
+adaptive-ai-infrastructure-builder/
+├── PROMPT.md                    # Core prompt
+├── references/
+│   ├── services.md              # AWS services decision matrix
+│   ├── architecture-patterns.md # Common architecture patterns
+│   └── examples.md              # Sample scenarios and outputs
+├── CHANGELOG.md
+├── README.md
+└── LICENSE
+```
+
+## Quick start
+
+**Any AI assistant:** Copy the prompt from `PROMPT.md` and paste it into your conversation.
+
+**Claude Projects:** Upload `PROMPT.md` and reference files to project knowledge.
+
+**API calls:** Include `PROMPT.md` in your system prompt. Reference files load on demand.
+
+## What it does
+
+1. **Gathers context** — Asks about use case, budget, connectivity, users, devices, data type
+2. **Designs architecture** — Selects only necessary AWS services, optimized for constraints
+3. **Delivers everything** — IaC (CDK/Terraform), API design, cost estimate, security, monitoring, troubleshooting
+
+## Who it's for
 
 - Developers in emerging markets
 - NGOs and education platforms
-- Startups with limited budgets
-- Builders working in low-connectivity environments
+- Budget-limited startups
+- Builders in low-connectivity environments
 
-## AWS Services Used
+## AWS Services
 
-- AWS Lambda (serverless compute)
-- Amazon S3 (storage)
-- Amazon API Gateway (API layer)
-- Amazon DynamoDB (database)
-- Amazon CloudWatch (monitoring)
-- AWS IAM (security)
+Lambda · S3 · API Gateway · DynamoDB · SQS · CloudWatch · IAM · Graviton
 
-## Submission
+## Author
 
-See [PROMPT.md](PROMPT.md) for the full submission.
+[Patience Richard](https://github.com/patiencerichard)
 
 ## License
 
-MIT
-# adaptive-ai-infrastructure-builder
+MIT. Use freely, share widely.

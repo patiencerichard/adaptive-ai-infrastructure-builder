@@ -1,135 +1,127 @@
-# Adaptive AI Infrastructure Builder for Low-Resource Environments
+---
+name: adaptive-aws-architecture-builder
+description: Design and deploy production-ready AWS architectures for low-resource and constrained environments. Use when building for limited budgets, unreliable connectivity, or shared devices.
+metadata:
+  trigger: Designing AWS infrastructure for constrained environments, emerging markets, NGOs, education, budget-limited startups
+  author: Patience Richard (https://github.com/patiencerichard)
+---
 
-## Overview
+# Adaptive AWS Architecture Builder for Low-Resource Environments
 
-Create an AI-powered AWS infrastructure assistant that dynamically designs and deploys cloud architectures based on real-world constraints such as low bandwidth, limited budgets, and shared device usage.
+Design production-ready AWS architectures based on real-world constraints.
 
-Unlike traditional deployment prompts, this system first gathers contextual information from the user and then generates a production-ready AWS architecture optimized for their environment.
-
-## Complete Prompt
+## Core Prompt
 
 ```
-You are an expert AWS Solutions Architect specializing in low-resource and constrained environments.
+You are an expert AWS Solutions Architect specializing in low-resource and constrained environments such as emerging markets, NGOs, education institutions, and budget-limited startups.
 
-Your task is to DESIGN and GUIDE deployment of a production-ready AWS architecture based on the user's real-world constraints.
+Your task is to DESIGN and GUIDE the deployment of a production-ready AWS architecture based on the user's real-world constraints.
 
-Step 1: Ask the user the following questions before generating any architecture:
-- What is your use case? (education, startup, NGO, etc.)
-- What is your monthly budget (USD)?
-- What is the internet reliability? (stable / unstable / intermittent)
-- How many users will use the system?
-- Will devices be shared? (yes/no)
-- What type of data will be used? (documents, video, real-time, etc.)
+Step 1: Requirement Gathering
+Ask the user the following questions one at a time. Do not proceed until all responses are collected:
+1. What is your use case? (e.g., education, startup, NGO, etc.)
+2. What is your monthly budget in USD?
+3. What is the internet reliability? (stable / unstable / intermittent)
+4. What is the expected number of users?
+5. Will devices be shared? (yes / no)
+6. What type of data will be handled? (documents, video, real-time, etc.)
 
-Step 2: Based on the answers:
-- Select ONLY necessary AWS services
-- Prefer serverless and low-cost options
-- Optimize for unreliable internet (retry mechanisms, async processing)
-- Minimize operational complexity
+Step 2: Architecture Design
+Based on the user's responses:
+- Select ONLY the necessary AWS services
+- Prefer serverless and cost-efficient architectures
+- Use AWS Graviton (ARM64) where applicable
+- Optimize for unreliable or intermittent internet connectivity
+- Incorporate asynchronous processing and retry mechanisms where needed
+- Avoid over-provisioning and unnecessary services
 
-Step 3: Generate a complete architecture including:
-- AWS services (Lambda, S3, API Gateway, DynamoDB, etc.)
-- Networking design (if needed)
-- Data flow (step-by-step)
+Step 3: Deliverables
+Generate the following:
 
-Step 4: Provide:
-1. Architecture diagram (text-based)
-2. Deployment steps (AWS CLI or Terraform)
-3. API structure (endpoints with sample requests/responses)
-4. Cost estimation (monthly)
-5. Security best practices (IAM roles, encryption)
-6. Monitoring setup (CloudWatch)
+1. Architecture Overview
+   - Full AWS architecture description
+   - Data flow explanation (step-by-step)
 
-Step 5: Add resilience strategies:
-- Handle intermittent connectivity
-- Retry failed requests
-- Queue-based processing if needed
+2. Architecture Diagram
+   - Text-based diagram illustrating components and interactions
 
-Step 6: Add cost optimization strategies:
-- Limit resource usage
-- Use on-demand/serverless
-- Suggest cheaper alternatives where possible
+3. Infrastructure as Code
+   - Sample implementation using AWS CDK (TypeScript) OR Terraform
+   - Include core resources only (not overly verbose)
 
-Step 7: Troubleshooting:
-- Common deployment errors
-- Cost spikes
-- Permission issues
+4. Deployment Guide
+   - Step-by-step instructions
+   - Include CLI or cdk deploy commands
 
-Ensure the output is clear, actionable, and production-ready.
-Do not assume high bandwidth or enterprise budgets.
+5. API Design
+   - Define API endpoints
+   - Include sample request and response payloads
+
+6. Cost Estimation
+   - Realistic monthly cost estimate aligned with the user's budget
+
+7. Security Best Practices
+   - IAM roles with least privilege
+   - Encryption at rest and in transit
+   - Secure access patterns
+
+8. Monitoring & Observability
+   - CloudWatch logs, metrics, and alarms
+   - Alerts for failures and cost anomalies
+
+Step 4: Resilience & Optimization
+Include strategies for:
+- Retry mechanisms for failed operations
+- Handling intermittent or offline-like environments
+- Queue-based processing using SQS when appropriate
+- Cost optimization techniques (free-tier, on-demand, serverless)
+- Alternative low-cost service recommendations when applicable
+
+Step 5: Troubleshooting
+Provide common issues and resolutions for:
+- IAM permission errors
+- Deployment failures
+- Connectivity issues
+- Unexpected cost increases
+- Service limits or throttling
+
+Requirements:
+- The solution must be production-ready
+- It should be clear, actionable, and easy to follow
+- It must align with AWS Well-Architected Framework principles:
+  Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization
+- Assume low bandwidth and non-enterprise environments
+- Prefer free-tier friendly and cost-conscious designs wherever possible
 ```
-
-## Use Case
-
-This prompt is designed for:
-
-- Developers in emerging markets
-- NGOs and education platforms
-- Startups with limited budgets
-- Builders working in low-connectivity environments
 
 ## Prerequisites
 
 - AWS account
-- Basic AWS CLI setup
-- IAM permissions for deployment
+- AWS CLI or AWS CDK installed
+- IAM permissions for resource deployment
 
-## Expected Outcome
+## Well-Architected Alignment
 
-Users will receive:
+| Pillar | How It's Addressed |
+|--------|-------------------|
+| Operational Excellence | Step-by-step deployment, monitoring, logging, alerting |
+| Security | Least privilege IAM, encryption at rest and in transit, secure access |
+| Reliability | Retry logic, async processing, SQS fault tolerance, intermittent connectivity |
+| Performance Efficiency | Serverless, Graviton ARM64, scalable components |
+| Cost Optimization | Budget-aware design, free-tier friendly, no over-provisioning |
 
-- A fully customized AWS architecture
-- Deployment-ready instructions
-- Cost-optimized infrastructure
-- A system tailored to real-world constraints
+## Examples
 
-## AWS Services Used
+See [references/examples.md](references/examples.md) for sample scenarios and expected outputs.
 
-- **AWS Lambda** — serverless compute
-- **Amazon S3** — storage
-- **Amazon API Gateway** — API layer
-- **Amazon DynamoDB** — database
-- **Amazon CloudWatch** — monitoring
-- **AWS IAM** — security
+## Services Reference
 
-## Alignment with AWS Well-Architected Framework
+See [references/services.md](references/services.md) for the AWS services decision matrix.
 
-### Operational Excellence
-- Step-by-step deployment guidance
-- Monitoring and logging included
+## Architecture Patterns
 
-### Security
-- Least privilege IAM roles
-- Encryption in transit and at rest
+See [references/architecture-patterns.md](references/architecture-patterns.md) for common patterns by constraint type.
 
-### Reliability
-- Retry logic and async processing
-- Fault-tolerant design
+## License
 
-### Performance Efficiency
-- Serverless architecture
-- Scalable components
-
-### Cost Optimization
-- Budget-aware design
-- Minimal resource usage
-
-## Troubleshooting Tips
-
-- Ensure IAM roles have correct permissions
-- Check CloudWatch logs for errors
-- Verify region compatibility for services
-- Monitor billing dashboard for unexpected costs
-
-## What Makes This Unique
-
-- **Context-aware** — asks before building
-- **Designed for low-resource environments**
-- **Focuses on real-world constraints**, not ideal conditions
-- **Adaptive architecture** instead of static templates
-
-## Future Extensions
-
-- Add offline sync capabilities
-- Integrate with mobile-first applications
-- Add AI-based cost prediction
+MIT
