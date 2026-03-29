@@ -22,11 +22,11 @@ adaptive-ai-infrastructure-builder/
 
 ## Quick start
 
+**Kiro IDE:** Open this project in Kiro and use the prompt directly — Kiro understands project context automatically.
+
+**Amazon Q Developer:** Paste the prompt from `PROMPT.md` into the Amazon Q chat in your IDE.
+
 **Any AI assistant:** Copy the prompt from `PROMPT.md` and paste it into your conversation.
-
-**Amazon Q Developer:** Use the prompt directly in your IDE chat.
-
-**API calls:** Include `PROMPT.md` in your system prompt. Reference files load on demand.
 
 ## What it does
 
