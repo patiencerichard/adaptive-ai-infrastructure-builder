@@ -24,7 +24,7 @@ adaptive-ai-infrastructure-builder/
 
 **Any AI assistant:** Copy the prompt from `PROMPT.md` and paste it into your conversation.
 
-**Claude Projects:** Upload `PROMPT.md` and reference files to project knowledge.
+**Amazon Q Developer:** Use the prompt directly in your IDE chat.
 
 **API calls:** Include `PROMPT.md` in your system prompt. Reference files load on demand.
 
