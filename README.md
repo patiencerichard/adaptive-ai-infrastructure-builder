@@ -11,10 +11,12 @@ Most AWS deployment prompts assume enterprise budgets, stable internet, and dedi
 ```
 adaptive-ai-infrastructure-builder/
 ├── PROMPT.md                    # Core prompt
+├── GUIDE.md                     # Complete usage guide (start here)
 ├── references/
 │   ├── services.md              # AWS services decision matrix
 │   ├── architecture-patterns.md # Common architecture patterns
 │   └── examples.md              # Sample scenarios and outputs
+├── example/                     # Working example project (CDK + Lambda)
 ├── CHANGELOG.md
 ├── README.md
 └── LICENSE
@@ -22,11 +24,13 @@ adaptive-ai-infrastructure-builder/
 
 ## Quick start
 
-**Kiro IDE:** Open this project in Kiro and use the prompt directly — Kiro understands project context automatically.
+1. Copy the prompt from [`PROMPT.md`](PROMPT.md)
+2. Paste it into your AI assistant (Kiro, Amazon Q, ChatGPT, etc.)
+3. Answer 6 questions about your situation
+4. Get a full deployable architecture
+5. Run `cdk deploy`
 
-**Amazon Q Developer:** Paste the prompt from `PROMPT.md` into the Amazon Q chat in your IDE.
-
-**Any AI assistant:** Copy the prompt from `PROMPT.md` and paste it into your conversation.
+📖 **New here?** Read the **[Complete Guide](GUIDE.md)** — it walks you through everything from setup to deployment to testing.
 
 ## What it does
 
